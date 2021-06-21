@@ -7,5 +7,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+  <ion-card *ngFor="let item of productos" >  
+    <ion-card-content style="display: flex;">
+      <img src="{{ media+item.imagen }}" alt="" style="width: 30%;">
+      <div style="margin-left: 10px;">
+        <p>Cantidad: {{ item.cantidad }}</p>
+        <p>Producto: {{ item.producto }}</p>
+        <p>Precio: {{ item.precio }}</p>
+        <p>Total: {{ item.total }}</p>
+        <p style="text-transform: capitalize;">Estado: {{ item.status }}</p>
+        
+      </div>
+      
+    </ion-card-content>
+  </ion-card>
 </ion-content>

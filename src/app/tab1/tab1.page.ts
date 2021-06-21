@@ -8,21 +8,25 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
+  productos:any = [];
+  media:any;
   constructor(
     private api: ApiService,
     public alertController: AlertController
     ) {
-      this.getOrders()
+      this.getOrders();
+      this.media = this.api.media;
   }
 
 
 
   getOrders(){
     let userID = localStorage.getItem('user')
+    console.log(userID)
+
     this.api.getService('getOrdersByStore/'+userID).subscribe((res:any)=>{
-      console.log(res.data);
-      
+      this.productos = res;
+      console.log(res)
     })
   }
 

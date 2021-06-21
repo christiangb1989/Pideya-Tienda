@@ -22,7 +22,6 @@ export class LoginPage implements OnInit {
     ) {
       
       this.userId = this.NotificacionService.userId;
-      alert(this.userId )
      }
 
   ngOnInit() {
@@ -33,7 +32,7 @@ export class LoginPage implements OnInit {
     let param = {
       user: this.user,
       pass:this.pass,
-      fcm : this.userId
+      fcm : 'this.userId'
     }
     this.api.postService('storeLogin', param).subscribe( (res:any) =>{      
       if(res.status == true){
