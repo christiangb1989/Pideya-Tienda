@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Productos
+    </ion-title>
+    <ion-button style="margin-right: 10px;" color="danger" routerLink="/details/0" slot="end">
+      <ion-icon  name="add-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card *ngFor="let item of product" (click)="editProduct(item)">
+    
+    <div class="products">
+      <div class="prod_img">
+        <img src="{{ media+item.imagen }}" class="product_img" alt="">
+      </div>
+      <div class="prod_details">
+        <p>{{ item.titulo }}</p>
+        <p class="desc">{{ (item.descripcion | slice:0:80) }}</p>
+        <p style="font-size: 18px;">S/{{ (item.descuento > 0)? (item.precio - item.descuento).toFixed(2) : item.precio }}</p>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>

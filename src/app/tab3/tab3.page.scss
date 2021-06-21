@@ -1,0 +1,22 @@
+.products{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    border: 1px solid #f2f2f2;
+    padding: 10px;
+}
+
+.products .prod_img img{
+    width: 100px;
+    height: 100px;
+}
+
+.prod_details{
+    margin-left: 10px;
+}
+
+.prod_details p{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Pattaya', sans-serif;
+}

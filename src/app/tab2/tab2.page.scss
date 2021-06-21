@@ -1,0 +1,42 @@
+.products{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.products .prod_img{
+    width: 100px;
+    height: 100px;
+}
+.products .prod_img img{
+    width: 100px;
+    height: 100px;
+}
+.product_img{
+    border-radius: 7px;
+}
+ion-card{
+    margin:15px
+}
+.prod_details{
+    margin-left: 10px;
+    width: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.prod_details p{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.prod_details .desc{
+    font-weight: 400;
+    text-transform: inherit;
+}
+.add{
+    margin-right: 10px;
+}

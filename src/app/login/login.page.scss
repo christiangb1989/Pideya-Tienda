@@ -1,0 +1,56 @@
+
+.content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    
+}
+.login{
+    margin: 10px;
+    padding: 10px;
+    margin: 0px auto;
+
+}
+.login div input{
+    height: 40px;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #d7d8da;
+    outline: none;
+    padding: 5px;
+}
+button{
+    width: 100%;
+    background: #383a3e;
+    font-size: 16px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    padding: 10px 0px;
+    border-radius: 7px;
+    color: white;
+}
+.logo{
+    width: 200px;
+    margin: 0px auto;
+    display: block;
+}
+h2{
+    text-align: center;
+    color: white;
+}
+ion-content{
+    --background: #ff1518;
+}

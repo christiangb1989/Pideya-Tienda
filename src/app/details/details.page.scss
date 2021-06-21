@@ -1,0 +1,61 @@
+.color{
+    width: 50px;
+    height: 50px;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+div label{
+    margin-bottom: 5px;
+}
+div input, div select{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: solid 1px #d7d8da;
+    padding: 5px;
+    font-family: 'Roboto';
+    font-size: 13px;
+    border-radius: 5px;
+}
+textarea{
+    width: 100%;
+    outline: none;
+    border: solid 1px #d7d8da;
+    padding: 5px;
+    font-family: 'Roboto';
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+
+div div.boxColor{
+    display: flex;
+    flex-direction: row;
+    margin-left: -20px;
+}
+.gallery{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 20px;
+    justify-content: space-between;
+}
+
+.gallery div{
+    width: 30%;
+    border: solid 1px #d7d8da;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    padding: 5px;
+    text-align: center;
+}
+
+.gallery div p{
+    font-size: 12px;
+}

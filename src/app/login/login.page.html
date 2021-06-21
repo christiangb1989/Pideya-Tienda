@@ -1,0 +1,23 @@
+<ion-content>
+  <div class="content">
+    <div class="main">
+      <img class="logo" src="assets/icon/icon.png" alt="">
+      <h2>Ingresar al neocio</h2>
+      <div class="login">
+        <div>
+          <label for=""></label>
+          <input type="text" name="user" [(ngModel)]="user" placeholder="user@mail.com">
+        </div>
+        <div>
+          <label for=""></label>
+          <input type="password" name="pass" [(ngModel)]="pass" placeholder="contraseña" >
+        </div>
+        <div>
+          <button (click)="submit()" type="button">Ingresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  
+</ion-content>

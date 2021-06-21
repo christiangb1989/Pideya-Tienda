@@ -1,0 +1,7 @@
+{
+  "name": "storeAppYaMarket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

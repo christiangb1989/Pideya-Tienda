@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="products"  *ngFor="let item of product">
+    <div class="prod_img">
+      <img src="{{ item.imagen }}" class="product_img" alt="">
+    </div>
+    <div class="prod_details">
+      <p>{{ item.titulo }}</p>
+      
+    </div>
+    <div class="prod_edit">
+
+    </div>
+  </div>
+<!-- List Inset Lines -->
+</ion-content>

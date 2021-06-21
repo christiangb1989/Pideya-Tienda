@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2" color="dark" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Producto</ion-title>
+    <ion-button slot="end" *ngIf="titulo" (click)="deleteProduct()"  color="danger">
+      <ion-icon name="remove-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <label for="">Nombre</label>
+    <input type="text" name="" [(ngModel)]="titulo" value="{{ titulo }}">
+  </div>
+  <div class="gallery">
+    <div (click)="selectImageSource('imagen01')">
+      <p *ngIf="!imagen01">Imagen no disponible</p>
+      <input type="file" style="width: 100%; height: 100%;" id="imagen01" (change)="uploadFile($event)" hidden="true" accept="image/*" />
+      <img *ngIf="imagen01" src="{{ media+imagen01 }}" alt="">
+    </div>
+    <div (click)="selectImageSource('imagen02')">
+      <p *ngIf="!imagen02">Imagen no disponible</p>
+      <input type="file" style="width: 100%; height: 100%;" id="imagen02" (change)="uploadFile($event)"  hidden="true" accept="image/*" />
+      <img src="{{ imagen02 }}" alt="">
+    </div>
+    <div (click)="selectImageSource('imagen03')">
+      <p *ngIf="!imagen03">Imagen no disponible</p>
+      <input type="file" style="width: 100%; height: 100%;" id="imagen03" (change)="uploadFile($event)" hidden="true" accept="image/*" />
+      <img src="{{ imagen03 }}" alt="">
+    </div>
+  </div>
+  <div class="gallery">
+    <div (click)="selectImageSource('imagen04')">
+      <p *ngIf="!imagen04" >Imagen no disponible</p>
+      <img src="" alt="">
+      <input type="file" style="width: 100%; height: 100%;" id="imagen04" (change)="uploadFile($event)" hidden="true" accept="image/*" />
+      <img src="{{ imagen04 }}" alt="">
+    </div>
+
+    <div (click)="selectImageSource('imagen05')">
+      <p *ngIf="!imagen05">Imagen no disponible</p>
+      <input type="file" style="width: 100%; height: 100%;" id="imagen05" (change)="uploadFile($event)" hidden="true" accept="image/*" />
+      <img src="{{ imagen05 }}" alt="">
+    </div>
+    <div (click)="selectImageSource('imagen06')">
+      <p *ngIf="!imagen06">Imagen no disponible</p>
+      <input type="file" style="width: 100%; height: 100%;" id="imagen06" (change)="uploadFile($event)" hidden="true" accept="image/*" />
+      <img src="{{ imagen06 }}" alt="">
+    </div>
+  </div>
+
+  <div>
+    <label for="">Descripción</label>
+    <textarea name="" [(ngModel)]="descripcion" rows="6">
+      {{ descripcion }}
+    </textarea>
+  </div>
+  
+  <ion-item  (ionChange)="enableField($event, 'kilos')" lines="none">
+    <ion-label>Kilos</ion-label>
+    <ion-toggle ></ion-toggle>
+  </ion-item>
+  <div>
+    <input type="number" *ngIf="kilosEnable" name="" [(ngModel)]="kilos" placeholder="Kilos">
+  </div>
+  
+  <ion-item   (ionChange)="enableField($event, 'litros')"  lines="none">
+    <ion-label>Litos</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+  <div>
+    <input type="number" *ngIf="litrosEnable" name="" [(ngModel)]="metros" placeholder="Litros">
+  </div>
+
+  <ion-item   (ionChange)="enableField($event, 'metros')" lines="none">
+    <ion-label>Metros</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+  <div>
+    <input type="number" *ngIf="metrosEnable" name="" [(ngModel)]="metros" placeholder="Metros">
+  </div>
+
+  <ion-item   (ionChange)="enableField($event, 'unidad')" lines="none">
+    <ion-label>Unidad</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+  <div>
+    <input type="number" *ngIf="unidadEnable" name="" [(ngModel)]="unidad" placeholder="Unidad">
+  </div>
+  <div>
+    <label for="">Descuento</label>
+    <input type="text" name="" [(ngModel)]="descuento" value="{{ descuento }}" >
+  </div>
+  <div>
+    <label for="">Precio</label>
+    <input type="text" name="" [(ngModel)]="precio" value="{{ precio }}" >
+  </div>
+
+  <div>
+    <label for="">Talla</label>
+    <input type="text" name="" [(ngModel)]="talla" value="{{ talla }}" placeholder="S,M,L,XL">
+  </div>
+
+  <div>
+    <label for="">Color</label>
+    <input type="color" name="" [(ngModel)]="pickerColor" (change)="addColor()">
+    <div class="boxColor">
+      <div *ngFor="let item of color; let i = index" (click)="deleteColor(i)" class="color" [style]="{'background':item}"></div>
+    </div>
+    
+  </div>
+  <div>
+    <label for="">Estado</label>
+    <select [(ngModel)]="status">
+      <option value="0">Desactivar</option>
+      <option value="1">Activo</option>
+    </select>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button *ngIf="!userID"  (click)="save()" expand="block" size="large" color="danger" >
+      Guardar
+    </ion-button>
+    <ion-button *ngIf="userID"  (click)="update()" expand="block" size="large" color="danger" >
+      Actulizar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
