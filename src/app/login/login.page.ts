@@ -22,12 +22,14 @@ export class LoginPage implements OnInit {
     ) {
       
       this.userId = this.NotificacionService.userId;
+      
      }
 
   ngOnInit() {
   }
 
   submit(){
+    console.log('fcm', this.userId)
     this.presentLoading();
     let param = {
       user: this.user,
@@ -44,10 +46,12 @@ export class LoginPage implements OnInit {
         },1000)
         
       }else{
+        this.loadingController.dismiss();
         this.presentAlert();
       }
       
     }, ()=>{
+      this.loadingController.dismiss();
       this.presentAlert();
     })
   }
